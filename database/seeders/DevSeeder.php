@@ -3,8 +3,10 @@
 namespace Database\Seeders;
 
 use Carbon\Carbon;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class DevSeeder extends Seeder
 {
@@ -165,38 +167,20 @@ class DevSeeder extends Seeder
                 'updated_at' => now(),
             ],
         ]);
-
-        DB::table('users')->insert([
+        User::create(
             [
-                'id' => 1,
-                'school_id' => 539231357,
-                'name' => 'VICKY IBRAHIMOVIC',
-                'class' => 'XII TEL 8',
-                'major' => 'PPLG',
-                'username' => 'vickyibr',
-                'role' => 'member',
-                'password' => '$2y$12$H8UpG63vNgpdPGEkTuXEcuxXDmV9WoWaLxxwR2dAa8cGSQ1/p7/si',
-                'email' => '539231357@student.smktelkom-jkt.sch.id',
-                'email_verified_at' => null,
-                'remember_token' => null,
-                'created_at' => Carbon::parse('2026-01-19 06:36:11'),
-                'updated_at' => Carbon::parse('2026-01-19 06:36:11'),
-            ],
-            [
-                'id' => 2,
+                'id' => 0,
                 'school_id' => 0,
-                'name' => 'PERPUSTAKAAN',
+                'name' => 'ADMIN PERPUSTAKAAN',
                 'class' => '',
                 'major' => '',
-                'username' => 'admin_perpustakaan',
+                'username' => 'admin',
                 'role' => 'admin',
-                'password' => '$2y$12$RhmDicakTVWf7imnpGNWS.J1j19rctbqlh5qlCSQdlm8.LsGzTTFy',
-                'email' => '000000000@student.smktelkom-jkt.sch.id',
-                'email_verified_at' => null,
-                'remember_token' => null,
-                'created_at' => Carbon::parse('2026-01-20 01:14:57'),
-                'updated_at' => Carbon::parse('2026-01-20 01:14:57'),
+                'password' => Hash::make('admin'),
+                'email' => 'perpustakaan@smktelkom-jkt.sch.id',
+                'created_at' => now(),
+                'updated_at' => now(),
             ],
-        ]);
+        );
     }
 }
