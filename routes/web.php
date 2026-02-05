@@ -16,8 +16,8 @@ Route::get('/', function () {
 Route::middleware('guest')->group(function () {
     Route::get('login', [AuthController::class, 'showlogin'])->name('login');
     Route::get('register', [AuthController::class, 'showregister'])->name('register');
-    Route::post('register', [AuthController::class, 'register'])->name('register');
-    Route::post('login', [AuthController::class, 'login'])->name('login');
+    Route::post('register', [AuthController::class, 'register']);
+    Route::post('login', [AuthController::class, 'login']);
 }
 );
 Route::middleware(['checkRole:admin'])->group(function () {
