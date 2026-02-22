@@ -114,3 +114,13 @@ Jalankan perintah berikut di terminal:
 ```bash
 php artisan serve
 ```
+
+---
+
+<center>
+
+© 2026  
+VI · EA · MA  
+XII TEL 8 - 32
+
+</center>
