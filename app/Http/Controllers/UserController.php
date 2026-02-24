@@ -82,7 +82,7 @@ class UserController extends Controller
 
     public function destroy(User $user)
     {
-        if ($user->id == User::user()->id) {
+        if ($user->id == Auth::user()->id) {
             abort(403,'');
         }
 
